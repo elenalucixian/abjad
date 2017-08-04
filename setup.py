@@ -74,7 +74,7 @@ extras_require = {
         ],
     'development': [
         'pytest>=3.0.0',
-        'sphinx>=1.5.0',
+        'sphinx>=1.6.3',
         'sphinx-rtd-theme',
         'PyPDF2',
         ],
