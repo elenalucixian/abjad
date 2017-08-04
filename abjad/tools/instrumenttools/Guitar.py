@@ -81,7 +81,7 @@ class Guitar(Instrument):
             ::
 
                 >>> guitar.allowable_clefs
-                ClefList([Clef(name='treble')])
+                ClefList([Clef('treble')])
 
             ::
 

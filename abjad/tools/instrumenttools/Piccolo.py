@@ -77,7 +77,7 @@ class Piccolo(Instrument):
             ::
 
                 >>> piccolo.allowable_clefs
-                ClefList([Clef(name='treble')])
+                ClefList([Clef('treble')])
 
             ::
 

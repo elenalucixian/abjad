@@ -81,7 +81,7 @@ class BassSaxophone(Instrument):
             ::
 
                 >>> bass_saxophone.allowable_clefs
-                ClefList([Clef(name='treble')])
+                ClefList([Clef('treble')])
 
             ::
 

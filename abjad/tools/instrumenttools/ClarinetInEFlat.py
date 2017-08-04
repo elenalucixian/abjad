@@ -82,7 +82,7 @@ class ClarinetInEFlat(Instrument):
             ::
 
                 >>> clarinet.allowable_clefs
-                ClefList([Clef(name='treble')])
+                ClefList([Clef('treble')])
 
             ::
 

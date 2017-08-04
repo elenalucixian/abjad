@@ -83,7 +83,7 @@ class BassVoice(Instrument):
             ::
 
                 >>> bass.allowable_clefs
-                ClefList([Clef(name='bass')])
+                ClefList([Clef('bass')])
 
             ::
 

@@ -80,7 +80,7 @@ class BassFlute(Instrument):
             ::
 
                 >>> bass_flute.allowable_clefs
-                ClefList([Clef(name='treble')])
+                ClefList([Clef('treble')])
 
             ::
 

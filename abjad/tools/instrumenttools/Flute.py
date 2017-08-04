@@ -81,7 +81,7 @@ class Flute(Instrument):
             ::
 
                 >>> flute.allowable_clefs
-                ClefList([Clef(name='treble')])
+                ClefList([Clef('treble')])
 
             ::
 

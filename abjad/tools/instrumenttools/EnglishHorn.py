@@ -81,7 +81,7 @@ class EnglishHorn(Instrument):
             ::
 
                 >>> english_horn.allowable_clefs
-                ClefList([Clef(name='treble')])
+                ClefList([Clef('treble')])
 
             ::
 

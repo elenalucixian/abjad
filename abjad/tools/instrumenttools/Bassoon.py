@@ -86,7 +86,7 @@ class Bassoon(Instrument):
             ::
 
                 >>> bassoon.allowable_clefs
-                ClefList([Clef(name='bass'), Clef(name='tenor')])
+                ClefList([Clef('bass'), Clef('tenor')])
 
             ::
 

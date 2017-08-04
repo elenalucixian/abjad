@@ -79,7 +79,7 @@ class Vibraphone(Instrument):
             ::
 
                 >>> vibraphone.allowable_clefs
-                ClefList([Clef(name='treble')])
+                ClefList([Clef('treble')])
 
             ::
 

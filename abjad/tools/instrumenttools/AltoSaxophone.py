@@ -96,9 +96,7 @@ class AltoSaxophone(Instrument):
                         ),
                     allowable_clefs=instrumenttools.ClefList(
                         [
-                            abjad.Clef(
-                                name='treble',
-                                ),
+                            abjad.Clef('treble'),
                             ]
                         ),
                     pitch_range=abjad.PitchRange('[Db3, A5]'),
@@ -121,7 +119,7 @@ class AltoSaxophone(Instrument):
             ::
 
                 >>> alto_saxophone.allowable_clefs
-                ClefList([Clef(name='treble')])
+                ClefList([Clef('treble')])
 
             ::
 

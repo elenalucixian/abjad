@@ -82,7 +82,7 @@ class Oboe(Instrument):
             ::
 
                 >>> oboe.allowable_clefs
-                ClefList([Clef(name='treble')])
+                ClefList([Clef('treble')])
 
             ::
 

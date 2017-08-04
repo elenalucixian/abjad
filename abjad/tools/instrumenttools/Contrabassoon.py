@@ -14,7 +14,7 @@ class Contrabassoon(Instrument):
         ::
 
             >>> staff = abjad.Staff("c'4 d'4 e'4 fs'4")
-            >>> clef = abjad.Clef(name='bass')
+            >>> clef = abjad.Clef('bass')
             >>> abjad.attach(clef, staff[0])
             >>> contrabassoon = abjad.instrumenttools.Contrabassoon()
             >>> abjad.attach(contrabassoon, staff[0])
@@ -81,7 +81,7 @@ class Contrabassoon(Instrument):
             ::
 
                 >>> contrabassoon.allowable_clefs
-                ClefList([Clef(name='bass')])
+                ClefList([Clef('bass')])
 
             ::
 

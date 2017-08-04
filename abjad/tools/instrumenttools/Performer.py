@@ -37,9 +37,7 @@ class Performer(AbjadValueObject):
                                 ),
                             allowable_clefs=instrumenttools.ClefList(
                                 [
-                                    abjad.Clef(
-                                        name='treble',
-                                        ),
+                                    abjad.Clef('treble'),
                                     ]
                                 ),
                             pitch_range=abjad.PitchRange('[C4, D7]'),
@@ -56,9 +54,7 @@ class Performer(AbjadValueObject):
                                 ),
                             allowable_clefs=instrumenttools.ClefList(
                                 [
-                                    abjad.Clef(
-                                        name='treble',
-                                        ),
+                                    abjad.Clef('treble'),
                                     ]
                                 ),
                             pitch_range=abjad.PitchRange('[D5, C8]'),

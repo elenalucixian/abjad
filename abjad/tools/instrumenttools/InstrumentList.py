@@ -35,9 +35,7 @@ class InstrumentList(TypedList):
                             ),
                         allowable_clefs=instrumenttools.ClefList(
                             [
-                                abjad.Clef(
-                                    name='treble',
-                                    ),
+                                abjad.Clef('treble'),
                                 ]
                             ),
                         pitch_range=abjad.PitchRange('[C4, D7]'),
@@ -54,9 +52,7 @@ class InstrumentList(TypedList):
                             ),
                         allowable_clefs=instrumenttools.ClefList(
                             [
-                                abjad.Clef(
-                                    name='treble',
-                                    ),
+                                abjad.Clef('treble'),
                                 ]
                             ),
                         default_tuning=abjad.Tuning(

@@ -82,7 +82,7 @@ class ContrabassClarinet(Instrument):
             ::
 
                 >>> contrabass_clarinet.allowable_clefs
-                ClefList([Clef(name='treble'), Clef(name='bass')])
+                ClefList([Clef('treble'), Clef('bass')])
 
             ::
 

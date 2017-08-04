@@ -128,7 +128,7 @@ class Percussion(Instrument):
             ::
 
                 >>> percussion.allowable_clefs
-                ClefList([Clef(name='percussion')])
+                ClefList([Clef('percussion')])
 
             ::
 

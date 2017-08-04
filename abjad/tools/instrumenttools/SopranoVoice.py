@@ -82,7 +82,7 @@ class SopranoVoice(Instrument):
             ::
 
                 >>> soprano.allowable_clefs
-                ClefList([Clef(name='treble')])
+                ClefList([Clef('treble')])
 
             ::
 

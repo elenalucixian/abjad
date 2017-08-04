@@ -97,12 +97,8 @@ class AltoTrombone(Instrument):
                         ),
                     allowable_clefs=instrumenttools.ClefList(
                         [
-                            abjad.Clef(
-                                name='bass',
-                                ),
-                            abjad.Clef(
-                                name='tenor',
-                                ),
+                            abjad.Clef('bass'),
+                            abjad.Clef('tenor'),
                             ]
                         ),
                     pitch_range=abjad.PitchRange('[A2, Bb5]'),
@@ -125,7 +121,7 @@ class AltoTrombone(Instrument):
             ::
 
                 >>> alto_trombone.allowable_clefs
-                ClefList([Clef(name='bass'), Clef(name='tenor')])
+                ClefList([Clef('bass'), Clef('tenor')])
 
             ::
 

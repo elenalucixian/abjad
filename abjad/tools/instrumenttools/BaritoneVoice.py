@@ -85,7 +85,7 @@ class BaritoneVoice(Instrument):
             ::
 
                 >>> baritone.allowable_clefs
-                ClefList([Clef(name='bass')])
+                ClefList([Clef('bass')])
 
             ::
 

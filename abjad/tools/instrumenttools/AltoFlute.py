@@ -95,9 +95,7 @@ class AltoFlute(Instrument):
                         ),
                     allowable_clefs=instrumenttools.ClefList(
                         [
-                            abjad.Clef(
-                                name='treble',
-                                ),
+                            abjad.Clef('treble'),
                             ]
                         ),
                     pitch_range=abjad.PitchRange('[G3, G6]'),
@@ -120,7 +118,7 @@ class AltoFlute(Instrument):
             ::
 
                 >>> alto_flute.allowable_clefs
-                ClefList([Clef(name='treble')])
+                ClefList([Clef('treble')])
 
             ::
 

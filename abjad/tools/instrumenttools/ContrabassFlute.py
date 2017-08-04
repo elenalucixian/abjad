@@ -80,7 +80,7 @@ class ContrabassFlute(Instrument):
             ::
 
                 >>> contrabass_flute.allowable_clefs
-                ClefList([Clef(name='treble')])
+                ClefList([Clef('treble')])
 
             ::
 
