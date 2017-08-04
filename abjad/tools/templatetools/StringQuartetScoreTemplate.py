@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import collections
-from abjad.tools.abctools.AbjadValueObject import AbjadValueObject
+from abjad.tools.templatetools.ScoreTemplate import ScoreTemplate
 
 
-class StringQuartetScoreTemplate(AbjadValueObject):
+class StringQuartetScoreTemplate(ScoreTemplate):
     '''String quartet score template.
 
     ::

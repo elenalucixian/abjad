@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import collections
-from abjad.tools.abctools.AbjadValueObject import AbjadValueObject
+from abjad.tools.templatetools.ScoreTemplate import ScoreTemplate
 
 
-class GroupedRhythmicStavesScoreTemplate(AbjadValueObject):
+class GroupedRhythmicStavesScoreTemplate(ScoreTemplate):
     r'''Grouped rhythmic staves score template.
 
     ::
