@@ -17,7 +17,7 @@ class Clef(AbjadValueObject):
 
             >>> clef = abjad.Clef('treble')
             >>> clef
-            Clef(name='treble')
+            Clef('treble')
 
         ::
 
@@ -99,9 +99,8 @@ class Clef(AbjadValueObject):
     ### INITIALIZER ###
 
     def __init__(self, name='treble'):
-        from abjad.tools import pitchtools
-        from abjad.tools import scoretools
-        self._default_scope = scoretools.Staff
+        import abjad
+        self._default_scope = abjad.Staff
         if isinstance(name, str):
             self._name = name
         elif isinstance(name, type(self)):
@@ -111,7 +110,7 @@ class Clef(AbjadValueObject):
             message = message.format(name)
             raise TypeError(message)
         middle_c_position = self._calculate_middle_c_position(self._name)
-        middle_c_position = pitchtools.StaffPosition(middle_c_position)
+        middle_c_position = abjad.StaffPosition(middle_c_position)
         self._middle_c_position = middle_c_position
 
     ### SPECIAL METHODS ###
@@ -128,9 +127,7 @@ class Clef(AbjadValueObject):
 
                 >>> clef = abjad.Clef('treble')
                 >>> print(format(clef))
-                abjad.Clef(
-                    name='treble',
-                    )
+                abjad.Clef('treble')
 
         ..  container:: example
 
@@ -198,6 +195,15 @@ class Clef(AbjadValueObject):
             base_name = clef_name
         return self._clef_name_to_middle_c_position[base_name] + alteration
 
+    def _get_format_specification(self):
+        import abjad
+        return abjad.FormatSpecification(
+            self,
+            repr_is_indented=False,
+            storage_format_args_values=[self.name],
+            storage_format_is_indented=False,
+            )
+
     def _get_lilypond_format(self):
         return r'\clef "{}"'.format(self._name)
 
@@ -225,7 +231,7 @@ class Clef(AbjadValueObject):
                 >>> notes = maker(range(-12, -6), [(1, 4)])
                 >>> staff = abjad.Staff(notes)
                 >>> abjad.Clef.from_selection(staff)
-                Clef(name='bass')
+                Clef('bass')
 
             Choses between treble and bass based on minimal number of ledger
             lines.
