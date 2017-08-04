@@ -18,6 +18,42 @@ class GroupedRhythmicStavesScoreTemplate(ScoreTemplate):
 
             >>> class_ = abjad.templatetools.GroupedRhythmicStavesScoreTemplate
             >>> template_1 = class_(staff_count=4)
+            >>> show(template_1) # doctest: +SKIP
+
+        ..  docs::
+
+            >>> f(template_1.__illustrate__()[abjad.Score])
+            \context Score = "Grouped Rhythmic Staves Score" <<
+                \context StaffGroup = "Grouped Rhythmic Staves Staff Group" <<
+                    \context RhythmicStaff = "Staff 1" {
+                        \context Voice = "Voice 1" {
+                            \clef "percussion"
+                            s1
+                        }
+                    }
+                    \context RhythmicStaff = "Staff 2" {
+                        \context Voice = "Voice 2" {
+                            \clef "percussion"
+                            s1
+                        }
+                    }
+                    \context RhythmicStaff = "Staff 3" {
+                        \context Voice = "Voice 3" {
+                            \clef "percussion"
+                            s1
+                        }
+                    }
+                    \context RhythmicStaff = "Staff 4" {
+                        \context Voice = "Voice 4" {
+                            \clef "percussion"
+                            s1
+                        }
+                    }
+                >>
+            >>
+
+        ::
+
             >>> score = template_1()
             >>> show(score) # doctest: +SKIP
 
@@ -52,6 +88,39 @@ class GroupedRhythmicStavesScoreTemplate(ScoreTemplate):
         ::
 
             >>> template_2 = class_(staff_count=[2, 1, 2])
+            >>> show(template_2) # doctest: +SKIP
+
+        ..  docs::
+
+            >>> f(template_2.__illustrate__()[abjad.Score])
+            \context Score = "Grouped Rhythmic Staves Score" <<
+                \context StaffGroup = "Grouped Rhythmic Staves Staff Group" <<
+                    \context RhythmicStaff = "Staff 1" <<
+                        \context Voice = "Voice 1-1" {
+                            s1
+                        }
+                        \context Voice = "Voice 1-2" {
+                            s1
+                        }
+                    >>
+                    \context RhythmicStaff = "Staff 2" {
+                        \context Voice = "Voice 2" {
+                            s1
+                        }
+                    }
+                    \context RhythmicStaff = "Staff 3" <<
+                        \context Voice = "Voice 3-1" {
+                            s1
+                        }
+                        \context Voice = "Voice 3-2" {
+                            s1
+                        }
+                    >>
+                >>
+            >>
+
+        ::
+
             >>> score = template_2()
             >>> show(score) # doctest: +SKIP
 
@@ -102,72 +171,6 @@ class GroupedRhythmicStavesScoreTemplate(ScoreTemplate):
     def __call__(self):
         r'''Calls score template.
 
-        ..  container:: example
-
-            Call first template:
-
-            ::
-
-                >>> score_1 = template_1()
-                >>> show(score_1) # doctest: +SKIP
-
-            ::
-
-                >>> f(score_1)
-                \context Score = "Grouped Rhythmic Staves Score" <<
-                    \context StaffGroup = "Grouped Rhythmic Staves Staff Group" <<
-                        \context RhythmicStaff = "Staff 1" {
-                            \context Voice = "Voice 1" {
-                            }
-                        }
-                        \context RhythmicStaff = "Staff 2" {
-                            \context Voice = "Voice 2" {
-                            }
-                        }
-                        \context RhythmicStaff = "Staff 3" {
-                            \context Voice = "Voice 3" {
-                            }
-                        }
-                        \context RhythmicStaff = "Staff 4" {
-                            \context Voice = "Voice 4" {
-                            }
-                        }
-                    >>
-                >>
-
-        ..  container:: example
-
-            Call second template:
-
-            ::
-
-                >>> score_2 = template_2()
-                >>> show(score_2) # doctest: +SKIP
-
-            ::
-
-                >>> f(score_2)
-                \context Score = "Grouped Rhythmic Staves Score" <<
-                    \context StaffGroup = "Grouped Rhythmic Staves Staff Group" <<
-                        \context RhythmicStaff = "Staff 1" <<
-                            \context Voice = "Voice 1-1" {
-                            }
-                            \context Voice = "Voice 1-2" {
-                            }
-                        >>
-                        \context RhythmicStaff = "Staff 2" {
-                            \context Voice = "Voice 2" {
-                            }
-                        }
-                        \context RhythmicStaff = "Staff 3" <<
-                            \context Voice = "Voice 3-1" {
-                            }
-                            \context Voice = "Voice 3-2" {
-                            }
-                        >>
-                    >>
-                >>
-
         Returns score.
         '''
         import abjad
@@ -180,6 +183,7 @@ class GroupedRhythmicStavesScoreTemplate(ScoreTemplate):
                 name='Staff {}'.format(number)
                 staff = abjad.Staff([voice], name=name)
                 staff.context_name = 'RhythmicStaff'
+                abjad.annotate(staff, 'default_clef', abjad.Clef('percussion'))
                 staves.append(staff)
                 key = 'v{}'.format(number)
                 self.context_name_abbreviations[key] = voice.name
@@ -219,17 +223,31 @@ class GroupedRhythmicStavesScoreTemplate(ScoreTemplate):
     @property
     def context_name_abbreviations(self):
         r'''Gets context name abbreviations.
+
+        ..  container:: example
+
+            ::
+
+                >>> class_ = abjad.templatetools.GroupedRhythmicStavesScoreTemplate
+                >>> template = class_(staff_count=4)
+                >>> template.context_name_abbreviations
+                OrderedDict()
+
         '''
         return self._context_name_abbreviations
 
     @property
     def staff_count(self):
-        r'''Score template staff count.
+        r'''Gets score template staff count.
 
-        ::
+        ..  container:: example
 
-            >>> template_1.staff_count
-            4
+            ::
+
+                >>> class_ = abjad.templatetools.GroupedRhythmicStavesScoreTemplate
+                >>> template = class_(staff_count=4)
+                >>> template.staff_count
+                4
 
         Returns nonnegative integer.
         '''

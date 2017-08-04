@@ -14,8 +14,62 @@ class GroupedStavesScoreTemplate(ScoreTemplate):
 
         ::
 
-            >>> template_class = abjad.templatetools.GroupedStavesScoreTemplate
-            >>> template = template_class(staff_count=4)
+            >>> class_ = abjad.templatetools.GroupedStavesScoreTemplate
+            >>> template = class_(staff_count=4)
+            >>> show(template) # doctest: +SKIP
+
+        ..  docs::
+
+            >>> f(template.__illustrate__()[abjad.Score])
+            \context Score = "Grouped Staves Score" <<
+                \context StaffGroup = "Grouped Staves Staff Group" <<
+                    \context Staff = "Staff 1" {
+                        \context Voice = "Voice 1" {
+                            s1
+                        }
+                    }
+                    \context Staff = "Staff 2" {
+                        \context Voice = "Voice 2" {
+                            s1
+                        }
+                    }
+                    \context Staff = "Staff 3" {
+                        \context Voice = "Voice 3" {
+                            s1
+                        }
+                    }
+                    \context Staff = "Staff 4" {
+                        \context Voice = "Voice 4" {
+                            s1
+                        }
+                    }
+                >>
+            >>
+
+        ::
+
+            >>> score = template()
+            >>> f(score)
+            \context Score = "Grouped Staves Score" <<
+                \context StaffGroup = "Grouped Staves Staff Group" <<
+                    \context Staff = "Staff 1" {
+                        \context Voice = "Voice 1" {
+                        }
+                    }
+                    \context Staff = "Staff 2" {
+                        \context Voice = "Voice 2" {
+                        }
+                    }
+                    \context Staff = "Staff 3" {
+                        \context Voice = "Voice 3" {
+                        }
+                    }
+                    \context Staff = "Staff 4" {
+                        \context Voice = "Voice 4" {
+                        }
+                    }
+                >>
+            >>
 
     '''
 
@@ -37,37 +91,6 @@ class GroupedStavesScoreTemplate(ScoreTemplate):
     def __call__(self):
         '''Calls score template.
 
-        ..  container:: example
-
-            ::
-
-                >>> score = template()
-                >>> show(score) # doctest: +SKIP
-
-            ::
-
-                >>> f(score)
-                \context Score = "Grouped Staves Score" <<
-                    \context StaffGroup = "Grouped Staves Staff Group" <<
-                        \context Staff = "Staff 1" {
-                            \context Voice = "Voice 1" {
-                            }
-                        }
-                        \context Staff = "Staff 2" {
-                            \context Voice = "Voice 2" {
-                            }
-                        }
-                        \context Staff = "Staff 3" {
-                            \context Voice = "Voice 3" {
-                            }
-                        }
-                        \context Staff = "Staff 4" {
-                            \context Voice = "Voice 4" {
-                            }
-                        }
-                    >>
-                >>
-
         Returns score.
         '''
         import abjad
@@ -84,26 +107,46 @@ class GroupedStavesScoreTemplate(ScoreTemplate):
                 )
             staves.append(staff)
             self.context_name_abbreviations['v{}'.format(number)] = voice.name
-        grouped_rhythmic_staves_staff_group = abjad.StaffGroup(
+        staff_group = abjad.StaffGroup(
             staves,
             name='Grouped Staves Staff Group',
             )
-        grouped_rhythmic_staves_score = abjad.Score(
-            [grouped_rhythmic_staves_staff_group],
+        score = abjad.Score(
+            [staff_group],
             name='Grouped Staves Score',
             )
-        return grouped_rhythmic_staves_score
+        return score
 
     ### PUBLIC PROPERTIES ###
 
     @property
     def context_name_abbreviations(self):
         r'''Gets context name abbreviations.
+
+        ..  container:: 
+
+            ::
+
+                >>> class_ = abjad.templatetools.GroupedStavesScoreTemplate
+                >>> template = class_(staff_count=4)
+                >>> template.context_name_abbreviations
+                OrderedDict()
+
         '''
         return self._context_name_abbreviations
 
     @property
     def staff_count(self):
         r'''Gets staff count.
+
+        ..  container:: 
+
+            ::
+
+                >>> class_ = abjad.templatetools.GroupedStavesScoreTemplate
+                >>> template = class_(staff_count=4)
+                >>> template.staff_count
+                4
+
         '''
         return self._staff_count
