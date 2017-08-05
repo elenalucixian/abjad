@@ -43,13 +43,13 @@ class ScoreTemplate(abctools.AbjadValueObject):
         Returns none.
         '''
         import abjad
-        for staff in abjad.iterate(score).by_class(abjad.Staff):
-            leaf = abjad.inspect(staff).get_leaf(0)
+        prototype = (abjad.Staff, abjad.StaffGroup)
+        for context in abjad.iterate(score).by_class(prototype):
+            leaf = abjad.inspect(context).get_leaf(0)
             if not abjad.inspect(leaf).get_indicator(abjad.Instrument):
-                instrument = abjad.inspect(staff).get_annotation(
+                instrument = abjad.inspect(context).get_annotation(
                     'default_instrument')
                 abjad.attach(instrument, leaf)
-
             if not abjad.inspect(leaf).get_indicator(abjad.Clef):
-                clef = abjad.inspect(staff).get_annotation('default_clef')
+                clef = abjad.inspect(context).get_annotation('default_clef')
                 abjad.attach(clef, leaf)
