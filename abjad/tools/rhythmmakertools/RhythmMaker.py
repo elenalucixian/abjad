@@ -77,6 +77,7 @@ class RhythmMaker(AbjadValueObject):
 
         Returns selections.
         '''
+        import abjad
         self._rotation = rotation
         divisions = self._coerce_divisions(divisions)
         selections = self._make_music(divisions, rotation)
@@ -405,6 +406,7 @@ class RhythmMaker(AbjadValueObject):
                 duration = inspect(component).get_duration()
                 new_rests = maker([None], [duration])
                 mutate(component[:]).replace(new_rests)
+                component.multiplier = abjad.Multiplier(1)
                 new_selection.append(component)
             new_selection = abjad.select(new_selection)
             new_selections.append(new_selection)
