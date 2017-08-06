@@ -15,11 +15,11 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
         ::
 
             >>> template = abjad.templatetools.StringOrchestraScoreTemplate()
-            >>> score = template()
+            >>> show(template) # doctest: +SKIP
 
         ::
 
-            >>> f(score)
+            >>> f(template.__illustrate__()[abjad.Score])
             \context Score = "Score" <<
                 \tag #'(Violin1 Violin2 Violin3 Violin4 Violin5 Violin6 Viola1 Viola2 Viola3 Viola4 Cello1 Cello2 Cello3 Contrabass1 Contrabass2)
                 \context TimeSignatureContext = "TimeSignatureContext" {
@@ -30,11 +30,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Violin 1 Staff Group" <<
                             \context BowingStaff = "Violin 1 Bowing Staff" <<
                                 \context BowingVoice = "Violin 1 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Violin 1 Fingering Staff" <<
-                                \clef "treble"
                                 \context FingeringVoice = "Violin 1 Fingering Voice" {
+                                    \clef "treble"
+                                    s1
                                 }
                             >>
                         >>
@@ -42,11 +44,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Violin 2 Staff Group" <<
                             \context BowingStaff = "Violin 2 Bowing Staff" <<
                                 \context BowingVoice = "Violin 2 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Violin 2 Fingering Staff" <<
-                                \clef "treble"
                                 \context FingeringVoice = "Violin 2 Fingering Voice" {
+                                    \clef "treble"
+                                    s1
                                 }
                             >>
                         >>
@@ -54,11 +58,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Violin 3 Staff Group" <<
                             \context BowingStaff = "Violin 3 Bowing Staff" <<
                                 \context BowingVoice = "Violin 3 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Violin 3 Fingering Staff" <<
-                                \clef "treble"
                                 \context FingeringVoice = "Violin 3 Fingering Voice" {
+                                    \clef "treble"
+                                    s1
                                 }
                             >>
                         >>
@@ -66,11 +72,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Violin 4 Staff Group" <<
                             \context BowingStaff = "Violin 4 Bowing Staff" <<
                                 \context BowingVoice = "Violin 4 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Violin 4 Fingering Staff" <<
-                                \clef "treble"
                                 \context FingeringVoice = "Violin 4 Fingering Voice" {
+                                    \clef "treble"
+                                    s1
                                 }
                             >>
                         >>
@@ -78,11 +86,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Violin 5 Staff Group" <<
                             \context BowingStaff = "Violin 5 Bowing Staff" <<
                                 \context BowingVoice = "Violin 5 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Violin 5 Fingering Staff" <<
-                                \clef "treble"
                                 \context FingeringVoice = "Violin 5 Fingering Voice" {
+                                    \clef "treble"
+                                    s1
                                 }
                             >>
                         >>
@@ -90,11 +100,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Violin 6 Staff Group" <<
                             \context BowingStaff = "Violin 6 Bowing Staff" <<
                                 \context BowingVoice = "Violin 6 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Violin 6 Fingering Staff" <<
-                                \clef "treble"
                                 \context FingeringVoice = "Violin 6 Fingering Voice" {
+                                    \clef "treble"
+                                    s1
                                 }
                             >>
                         >>
@@ -104,11 +116,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Viola 1 Staff Group" <<
                             \context BowingStaff = "Viola 1 Bowing Staff" <<
                                 \context BowingVoice = "Viola 1 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Viola 1 Fingering Staff" <<
-                                \clef "alto"
                                 \context FingeringVoice = "Viola 1 Fingering Voice" {
+                                    \clef "alto"
+                                    s1
                                 }
                             >>
                         >>
@@ -116,11 +130,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Viola 2 Staff Group" <<
                             \context BowingStaff = "Viola 2 Bowing Staff" <<
                                 \context BowingVoice = "Viola 2 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Viola 2 Fingering Staff" <<
-                                \clef "alto"
                                 \context FingeringVoice = "Viola 2 Fingering Voice" {
+                                    \clef "alto"
+                                    s1
                                 }
                             >>
                         >>
@@ -128,11 +144,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Viola 3 Staff Group" <<
                             \context BowingStaff = "Viola 3 Bowing Staff" <<
                                 \context BowingVoice = "Viola 3 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Viola 3 Fingering Staff" <<
-                                \clef "alto"
                                 \context FingeringVoice = "Viola 3 Fingering Voice" {
+                                    \clef "alto"
+                                    s1
                                 }
                             >>
                         >>
@@ -140,11 +158,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Viola 4 Staff Group" <<
                             \context BowingStaff = "Viola 4 Bowing Staff" <<
                                 \context BowingVoice = "Viola 4 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Viola 4 Fingering Staff" <<
-                                \clef "alto"
                                 \context FingeringVoice = "Viola 4 Fingering Voice" {
+                                    \clef "alto"
+                                    s1
                                 }
                             >>
                         >>
@@ -154,11 +174,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Cello 1 Staff Group" <<
                             \context BowingStaff = "Cello 1 Bowing Staff" <<
                                 \context BowingVoice = "Cello 1 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Cello 1 Fingering Staff" <<
-                                \clef "bass"
                                 \context FingeringVoice = "Cello 1 Fingering Voice" {
+                                    \clef "bass"
+                                    s1
                                 }
                             >>
                         >>
@@ -166,11 +188,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Cello 2 Staff Group" <<
                             \context BowingStaff = "Cello 2 Bowing Staff" <<
                                 \context BowingVoice = "Cello 2 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Cello 2 Fingering Staff" <<
-                                \clef "bass"
                                 \context FingeringVoice = "Cello 2 Fingering Voice" {
+                                    \clef "bass"
+                                    s1
                                 }
                             >>
                         >>
@@ -178,11 +202,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Cello 3 Staff Group" <<
                             \context BowingStaff = "Cello 3 Bowing Staff" <<
                                 \context BowingVoice = "Cello 3 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Cello 3 Fingering Staff" <<
-                                \clef "bass"
                                 \context FingeringVoice = "Cello 3 Fingering Voice" {
+                                    \clef "bass"
+                                    s1
                                 }
                             >>
                         >>
@@ -192,11 +218,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Contrabass 1 Staff Group" <<
                             \context BowingStaff = "Contrabass 1 Bowing Staff" <<
                                 \context BowingVoice = "Contrabass 1 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Contrabass 1 Fingering Staff" <<
-                                \clef "bass_8"
                                 \context FingeringVoice = "Contrabass 1 Fingering Voice" {
+                                    \clef "bass_8"
+                                    s1
                                 }
                             >>
                         >>
@@ -204,18 +232,19 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Contrabass 2 Staff Group" <<
                             \context BowingStaff = "Contrabass 2 Bowing Staff" <<
                                 \context BowingVoice = "Contrabass 2 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Contrabass 2 Fingering Staff" <<
-                                \clef "bass_8"
                                 \context FingeringVoice = "Contrabass 2 Fingering Voice" {
+                                    \clef "bass_8"
+                                    s1
                                 }
                             >>
                         >>
                     >>
                 >>
             >>
-
 
     ..  container:: example
 
@@ -229,11 +258,11 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
             ...     cello_count=1,
             ...     contrabass_count=0,
             ...     )
-            >>> score = template()
+            >>> show(template) # doctest: +SKIP
 
         ::
 
-            >>> f(score)
+            >>> f(template.__illustrate__()[abjad.Score])
             \context Score = "Score" <<
                 \tag #'(Violin1 Violin2 Viola Cello)
                 \context TimeSignatureContext = "TimeSignatureContext" {
@@ -244,11 +273,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Violin 1 Staff Group" <<
                             \context BowingStaff = "Violin 1 Bowing Staff" <<
                                 \context BowingVoice = "Violin 1 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Violin 1 Fingering Staff" <<
-                                \clef "treble"
                                 \context FingeringVoice = "Violin 1 Fingering Voice" {
+                                    \clef "treble"
+                                    s1
                                 }
                             >>
                         >>
@@ -256,11 +287,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Violin 2 Staff Group" <<
                             \context BowingStaff = "Violin 2 Bowing Staff" <<
                                 \context BowingVoice = "Violin 2 Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Violin 2 Fingering Staff" <<
-                                \clef "treble"
                                 \context FingeringVoice = "Violin 2 Fingering Voice" {
+                                    \clef "treble"
+                                    s1
                                 }
                             >>
                         >>
@@ -270,11 +303,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Viola Staff Group" <<
                             \context BowingStaff = "Viola Bowing Staff" <<
                                 \context BowingVoice = "Viola Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Viola Fingering Staff" <<
-                                \clef "alto"
                                 \context FingeringVoice = "Viola Fingering Voice" {
+                                    \clef "alto"
+                                    s1
                                 }
                             >>
                         >>
@@ -284,11 +319,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Cello Staff Group" <<
                             \context BowingStaff = "Cello Bowing Staff" <<
                                 \context BowingVoice = "Cello Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Cello Fingering Staff" <<
-                                \clef "bass"
                                 \context FingeringVoice = "Cello Fingering Voice" {
+                                    \clef "bass"
+                                    s1
                                 }
                             >>
                         >>
@@ -308,12 +345,11 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
             ...     cello_count=1,
             ...     contrabass_count=0,
             ...     )
-            >>> score = template()
-            >>> show(score) # doctest: +SKIP
+            >>> show(template) # doctest: +SKIP
 
         ::
 
-            >>> f(score)
+            >>> f(template.__illustrate__()[abjad.Score])
             \context Score = "Score" <<
                 \tag #'(Cello)
                 \context TimeSignatureContext = "TimeSignatureContext" {
@@ -324,11 +360,13 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                         \context StringPerformerStaffGroup = "Cello Staff Group" <<
                             \context BowingStaff = "Cello Bowing Staff" <<
                                 \context BowingVoice = "Cello Bowing Voice" {
+                                    s1
                                 }
                             >>
                             \context FingeringStaff = "Cello Fingering Staff" <<
-                                \clef "bass"
                                 \context FingeringVoice = "Cello Fingering Voice" {
+                                    \clef "bass"
+                                    s1
                                 }
                             >>
                         >>
@@ -556,8 +594,10 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                 name='{} Fingering Staff'.format(name),
                 )
             lh_staff.is_simultaneous = True
-            abjad.attach(pitch_range, lh_staff)
-            abjad.attach(abjad.Clef(clef_name), lh_staff)
+            #abjad.attach(pitch_range, lh_staff)
+            #abjad.attach(abjad.Clef(clef_name), lh_staff)
+            abjad.annotate(lh_staff, 'pitch_range', pitch_range)
+            abjad.annotate(lh_staff, 'default_clef', abjad.Clef(clef_name))
             rh_voice = abjad.Voice(
                 [],
                 context_name='BowingVoice',
@@ -588,8 +628,10 @@ class StringOrchestraScoreTemplate(ScoreTemplate):
                 name='{} Staff'.format(name),
                 )
             lh_staff.is_simultaneous = True
-            abjad.attach(pitch_range, lh_staff)
-            abjad.attach(abjad.Clef(clef_name), lh_staff)
+            #abjad.attach(pitch_range, lh_staff)
+            #abjad.attach(abjad.Clef(clef_name), lh_staff)
+            abjad.annotate(lh_staff, 'pitch_range', pitch_range)
+            abjad.annotate(lh_staff, 'default_clef', abjad.Clef(clef_name))
             staff_group.append(lh_staff)
         return staff_group, tag_name
 
