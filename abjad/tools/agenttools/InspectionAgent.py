@@ -504,7 +504,8 @@ class InspectionAgent(abctools.AbjadObject):
         if isinstance(self._client, abjad.Leaf):
             return self._client._get_leaf(n=n)
         if 0 <= n:
-            leaves = abjad.iterate(self._client).by_leaf(start=0, stop=n+1)
+            stop = n + 1
+            leaves = abjad.iterate(self._client).by_leaf(start=0, stop=stop)
             leaves = list(leaves)
             if len(leaves) < n + 1:
                 return
@@ -519,7 +520,8 @@ class InspectionAgent(abctools.AbjadObject):
             leaves = list(leaves)
             if len(leaves) < abs(n):
                 return
-            leaf = leaves[abs(n)-1]
+            index = abs(n) - 1
+            leaf = leaves[index]
             return leaf
 
     def get_lineage(self):
@@ -958,10 +960,11 @@ class InspectionAgent(abctools.AbjadObject):
         '''
         import abjad
         if 0 <= n:
+            stop = n + 1
             components = abjad.iterate(self._client).by_class(
                 prototype=abjad.Tuplet,
                 start=0,
-                stop=n+1,
+                stop=stop,
                 )
             components = list(components)
             if len(components) < n + 1:
@@ -978,7 +981,8 @@ class InspectionAgent(abctools.AbjadObject):
             components = list(components)
             if len(components) < abs(n):
                 return
-            component = components[abs(n)-1]
+            index = abs(n) - 1
+            component = components[index]
             return component
 
     def get_vertical_moment(self, governor=None):

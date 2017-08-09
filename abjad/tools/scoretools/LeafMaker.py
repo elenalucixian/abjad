@@ -231,9 +231,7 @@ class LeafMaker(AbjadValueObject):
 
         ::
 
-            >>> maker = abjad.LeafMaker(
-            ...     decrease_monotonic=False,
-            ...     )
+            >>> maker = abjad.LeafMaker(decrease_monotonic=False)
             >>> pitches = ['E5']
             >>> durations = [abjad.Duration(13, 16)]
             >>> leaves = maker(pitches, durations)
@@ -284,8 +282,8 @@ class LeafMaker(AbjadValueObject):
 
     ..  container:: example
 
-        You may set `forbidden_written_duration` and
-        `decrease_monotonic` together:
+        You may set `forbidden_written_duration` and `decrease_monotonic`
+        together:
 
         ::
 
@@ -495,8 +493,7 @@ class LeafMaker(AbjadValueObject):
         use_messiaen_style_ties=False,
         use_multimeasure_rests=False,
         ):
-        self._decrease_monotonic = \
-            decrease_monotonic
+        self._decrease_monotonic = decrease_monotonic
         self._forbidden_written_duration = forbidden_written_duration
         self._is_diminution = is_diminution
         self._metrical_hierarchy = metrical_hierarchy
@@ -524,9 +521,9 @@ class LeafMaker(AbjadValueObject):
         nonreduced_fractions = nonreduced_fractions.repeat_to_length(size)
         pitches = abjad.Sequence(pitches).repeat_to_length(size)
         Duration = abjad.Duration
-        duration_groups = \
-            Duration._group_nonreduced_fractions_by_implied_prolation(
-            nonreduced_fractions)
+        duration_groups = Duration._group_by_implied_prolation(
+            nonreduced_fractions
+            )
         result = []
         for duration_group in duration_groups:
             # get factors in denominator of duration group other than 1, 2.
@@ -555,16 +552,17 @@ class LeafMaker(AbjadValueObject):
                     denominator)
                 multiplier = (numerator, denominator)
                 ratio = 1 / abjad.Duration(*multiplier)
-                duration_group = [ratio * abjad.Duration(duration)
-                    for duration in duration_group]
+                duration_group = [
+                    ratio * abjad.Duration(duration)
+                    for duration in duration_group
+                    ]
                 # make tuplet leaves
                 tuplet_leaves = []
                 for pitch, duration in zip(current_pitches, duration_group):
                     leaves = self._make_leaf_on_pitch(
                         pitch,
                         duration,
-                        decrease_monotonic=\
-                            self.decrease_monotonic,
+                        decrease_monotonic=self.decrease_monotonic,
                         skips_instead_of_rests=self.skips_instead_of_rests,
                         use_multimeasure_rests=self.use_multimeasure_rests,
                         use_messiaen_style_ties=self.use_messiaen_style_ties,
@@ -713,7 +711,7 @@ class LeafMaker(AbjadValueObject):
                 numerator,
                 duration.denominator,
                 )
-            if not pitches is None:
+            if pitches is not None:
                 arguments = (pitches, written_duration)
             else:
                 arguments = (written_duration, )

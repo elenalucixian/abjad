@@ -506,8 +506,7 @@ class TaleaRhythmMaker(RhythmMaker):
             leaf_list = self._make_leaves_from_talea(
                 map_division,
                 talea_denominator,
-                decrease_monotonic=\
-                    specifier.decrease_monotonic,
+                decrease_monotonic=specifier.decrease_monotonic,
                 forbidden_written_duration=\
                     specifier.forbidden_written_duration,
                 spell_metrically=specifier.spell_metrically,

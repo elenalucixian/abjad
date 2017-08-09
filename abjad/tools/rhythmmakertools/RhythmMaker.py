@@ -116,8 +116,7 @@ class RhythmMaker(AbjadValueObject):
             return selections
         new_selections = []
         duration_spelling_specifier = self._get_duration_spelling_specifier()
-        decrease_monotonic = \
-            duration_spelling_specifier.decrease_monotonic
+        decrease_monotonic = duration_spelling_specifier.decrease_monotonic
         forbidden_written_duration = \
             duration_spelling_specifier.forbidden_written_duration
         tie_specifier = self._get_tie_specifier()

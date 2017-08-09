@@ -42,8 +42,7 @@ class DurationSpellingSpecifier(AbjadValueObject):
         if forbidden_written_duration is not None:
             forbidden_written_duration = durationtools.Duration(
                 forbidden_written_duration)
-        self._decrease_monotonic = \
-            decrease_monotonic
+        self._decrease_monotonic = decrease_monotonic
         self._forbidden_written_duration = forbidden_written_duration
         assert isinstance(rewrite_meter, (bool, type(None)))
         self._rewrite_meter = rewrite_meter

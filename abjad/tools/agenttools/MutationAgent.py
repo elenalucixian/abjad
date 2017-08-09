@@ -3139,7 +3139,7 @@ class MutationAgent(abctools.AbjadObject):
             (This usage merely substitutes for the tuplet initializer.)
 
         ..  container:: example
-        
+
             Wraps leaves in measure:
 
             ::

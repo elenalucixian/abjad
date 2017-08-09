@@ -410,8 +410,7 @@ class IncisedRhythmMaker(RhythmMaker):
                 lcd,
                 forbidden_written_duration=\
                     specifier.forbidden_written_duration,
-                decrease_monotonic=\
-                    specifier.decrease_monotonic,
+                decrease_monotonic=specifier.decrease_monotonic,
                 spell_metrically=specifier.spell_metrically,
                 use_messiaen_style_ties=tie_specifier.use_messiaen_style_ties,
                 )
