@@ -226,8 +226,7 @@ class NoteRhythmMaker(RhythmMaker):
         tuplet_specifier = self._get_tuplet_spelling_specifier()
         leaf_maker = abjad.LeafMaker(
             decrease_monotonic=duration_specifier.decrease_monotonic,
-            forbidden_duration=\
-                duration_specifier.forbidden_duration,
+            forbidden_duration=duration_specifier.forbidden_duration,
             is_diminution=tuplet_specifier.is_diminution,
             use_messiaen_style_ties=tie_specifier.use_messiaen_style_ties,
             )

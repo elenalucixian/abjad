@@ -734,10 +734,10 @@ class StorageFormatAgent(AbjadValueObject):
         if not isinstance(subject, type):
             subject = type(subject)
         if platform.python_implementation() == 'PyPy':
-            # Under PyPy, funcsigs can't automatically find the correct 
+            # Under PyPy, funcsigs can't automatically find the correct
             # initializer or constructor, so must be told what's desired.
             # PyPy also seems to create function objects that don't exist
-            # under CPython, so we have to check for the existence of a 
+            # under CPython, so we have to check for the existence of a
             # filename to prove that those functions / methods are actually
             # being pulled from code that exists on the filesystem.
             if hasattr(subject.__init__.func_code, 'co_filename'):

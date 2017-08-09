@@ -220,7 +220,6 @@ class RhythmMaker(AbjadValueObject):
         tie_specifier = self._get_tie_specifier()
         tie_specifier(selections)
 
-
     def _apply_tuplet_spelling_specifier(self, selections, divisions):
         tuplet_spelling_specifier = self._get_tuplet_spelling_specifier()
         selections = tuplet_spelling_specifier(selections, divisions)
@@ -245,7 +244,7 @@ class RhythmMaker(AbjadValueObject):
                 divisions_.append(division)
         divisions = divisions_
         prototype = mathtools.NonreducedFraction
-        assert all( isinstance(_, prototype) for _ in divisions)
+        assert all(isinstance(_, prototype) for _ in divisions)
         return divisions
 
     def _get_beam_specifier(self):
