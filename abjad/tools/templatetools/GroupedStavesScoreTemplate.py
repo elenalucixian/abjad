@@ -123,7 +123,7 @@ class GroupedStavesScoreTemplate(ScoreTemplate):
     def context_name_abbreviations(self):
         r'''Gets context name abbreviations.
 
-        ..  container:: 
+        ..  container::
 
             ::
 
@@ -139,7 +139,7 @@ class GroupedStavesScoreTemplate(ScoreTemplate):
     def staff_count(self):
         r'''Gets staff count.
 
-        ..  container:: 
+        ..  container::
 
             ::
 
