@@ -303,7 +303,7 @@ class Chord(Leaf):
             instrument = self._get_effective(
                 instrumenttools.Instrument)
             if instrument:
-                sounding_pitch = instrument.sounding_pitch_of_written_middle_c
+                sounding_pitch = instrument.middle_c_sounding_pitch
             else:
                 sounding_pitch = pitchtools.NamedPitch('C4')
             interval = pitchtools.NamedPitch('C4') - sounding_pitch
