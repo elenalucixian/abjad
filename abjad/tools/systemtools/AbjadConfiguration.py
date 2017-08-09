@@ -205,11 +205,7 @@ class AbjadConfiguration(Configuration):
         if sys.version_info[0] == 2:
             lilypond_version_string = proc.stdout.readline()
         else:
-            import locale
-            encoding = locale.getdefaultlocale()[1]
-            if encoding is None:
-                encoding = 'utf-8'
-            lilypond_version_string = proc.stdout.readline().decode(encoding)
+            lilypond_version_string = proc.stdout.readline().decode()
         lilypond_version_string = lilypond_version_string.split(' ')[-1]
         lilypond_version_string = lilypond_version_string.strip()
         AbjadConfiguration._lilypond_version_string = lilypond_version_string
