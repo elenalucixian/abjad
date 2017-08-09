@@ -40,8 +40,8 @@ class Performer(AbjadValueObject):
                                     abjad.Clef('treble'),
                                     ]
                                 ),
-                            pitch_range=abjad.PitchRange('[C4, D7]'),
                             middle_c_sounding_pitch=abjad.NamedPitch("c'"),
+                            pitch_range=abjad.PitchRange('[C4, D7]'),
                             ),
                         instrumenttools.Piccolo(
                             instrument_name='piccolo',
@@ -57,8 +57,8 @@ class Performer(AbjadValueObject):
                                     abjad.Clef('treble'),
                                     ]
                                 ),
-                            pitch_range=abjad.PitchRange('[D5, C8]'),
                             middle_c_sounding_pitch=abjad.NamedPitch("c''"),
+                            pitch_range=abjad.PitchRange('[D5, C8]'),
                             ),
                         ]
                     ),

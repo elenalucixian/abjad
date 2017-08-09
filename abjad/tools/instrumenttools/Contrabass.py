@@ -52,8 +52,8 @@ class Contrabass(Instrument):
         short_instrument_name_markup=None,
         allowable_clefs=('bass', 'treble'),
         default_tuning=('C1', 'A1', 'D2', 'G2'),
-        pitch_range='[C1, G4]',
         middle_c_sounding_pitch='C3',
+        pitch_range='[C1, G4]',
         ):
         Instrument.__init__(
             self,
@@ -62,9 +62,8 @@ class Contrabass(Instrument):
             instrument_name_markup=instrument_name_markup,
             short_instrument_name_markup=short_instrument_name_markup,
             allowable_clefs=allowable_clefs,
+            middle_c_sounding_pitch=middle_c_sounding_pitch,
             pitch_range=pitch_range,
-            middle_c_sounding_pitch=\
-                middle_c_sounding_pitch,
             )
         self._performer_names.extend([
             'string player',

@@ -507,8 +507,7 @@ class TaleaRhythmMaker(RhythmMaker):
                 map_division,
                 talea_denominator,
                 decrease_monotonic=specifier.decrease_monotonic,
-                forbidden_written_duration=\
-                    specifier.forbidden_written_duration,
+                forbidden_written_duration=specifier.forbidden_written_duration,
                 spell_metrically=specifier.spell_metrically,
                 )
             leaf_lists.append(leaf_list)
@@ -562,7 +561,7 @@ class TaleaRhythmMaker(RhythmMaker):
             result.extend(leaves)
         result = abjad.Selection(result)
         return result
-    
+
     def _make_music(self, divisions, rotation):
         import abjad
         input_divisions = divisions[:]

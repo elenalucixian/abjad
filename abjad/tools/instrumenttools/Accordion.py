@@ -61,8 +61,8 @@ class Accordion(Instrument):
         instrument_name_markup=None,
         short_instrument_name_markup=None,
         allowable_clefs=('treble', 'bass'),
-        pitch_range='[E1, C8]',
         middle_c_sounding_pitch=None,
+        pitch_range='[E1, C8]',
         ):
         Instrument.__init__(
             self,
@@ -71,9 +71,8 @@ class Accordion(Instrument):
             instrument_name_markup=instrument_name_markup,
             short_instrument_name_markup=short_instrument_name_markup,
             allowable_clefs=allowable_clefs,
+            middle_c_sounding_pitch=middle_c_sounding_pitch,
             pitch_range=pitch_range,
-            middle_c_sounding_pitch=\
-                middle_c_sounding_pitch,
             )
         self._default_scope = 'PianoStaff'
         self._performer_names.extend([
@@ -111,8 +110,8 @@ class Accordion(Instrument):
                             abjad.Clef('bass'),
                             ]
                         ),
-                    pitch_range=abjad.PitchRange('[E1, C8]'),
                     middle_c_sounding_pitch=abjad.NamedPitch("c'"),
+                    pitch_range=abjad.PitchRange('[E1, C8]'),
                     )
 
         Returns string.

@@ -27,11 +27,11 @@ class Instrument(AbjadValueObject):
         '_instrument_name',
         '_instrument_name_markup',
         '_is_primary_instrument',
+        '_middle_c_sounding_pitch',
         '_performer_names',
         '_pitch_range',
         '_short_instrument_name',
         '_short_instrument_name_markup',
-        '_sounding_pitch_of_written_middle_c',
         '_starting_clefs',
         )
 
@@ -48,8 +48,8 @@ class Instrument(AbjadValueObject):
         instrument_name_markup=None,
         short_instrument_name_markup=None,
         allowable_clefs=None,
-        pitch_range=None,
         middle_c_sounding_pitch=None,
+        pitch_range=None,
         ):
         from abjad.tools import instrumenttools
         from abjad.tools import scoretools
@@ -80,12 +80,11 @@ class Instrument(AbjadValueObject):
         else:
             raise TypeError(pitch_range)
         self._pitch_range = pitch_range
-        middle_c_sounding_pitch = \
-            middle_c_sounding_pitch or pitchtools.NamedPitch("c'")
-        middle_c_sounding_pitch = \
-            pitchtools.NamedPitch(middle_c_sounding_pitch)
-        self._sounding_pitch_of_written_middle_c = \
-            middle_c_sounding_pitch
+        middle_c_sounding_pitch = middle_c_sounding_pitch or \
+            pitchtools.NamedPitch("c'")
+        middle_c_sounding_pitch = pitchtools.NamedPitch(
+            middle_c_sounding_pitch)
+        self._middle_c_sounding_pitch = middle_c_sounding_pitch
         self._default_scope = scoretools.Staff
         self._is_primary_instrument = False
         self._performer_names = ['instrumentalist']
@@ -338,7 +337,7 @@ class Instrument(AbjadValueObject):
 
         Returns named pitch.
         '''
-        return self._sounding_pitch_of_written_middle_c
+        return self._middle_c_sounding_pitch
 
     ### PUBLIC METHODS ###
 
