@@ -117,14 +117,14 @@ class RhythmMaker(AbjadValueObject):
         new_selections = []
         duration_spelling_specifier = self._get_duration_spelling_specifier()
         decrease_monotonic = duration_spelling_specifier.decrease_monotonic
-        forbidden_written_duration = \
-            duration_spelling_specifier.forbidden_written_duration
+        forbidden_duration = \
+            duration_spelling_specifier.forbidden_duration
         tie_specifier = self._get_tie_specifier()
         length = len(selections)
         division_masks = self.division_masks
         leaf_maker = abjad.LeafMaker(
             decrease_monotonic=decrease_monotonic,
-            forbidden_written_duration=forbidden_written_duration,
+            forbidden_duration=forbidden_duration,
             use_messiaen_style_ties=tie_specifier.use_messiaen_style_ties,
             )
         for i, selection in enumerate(selections):
